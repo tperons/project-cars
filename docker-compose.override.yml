@@ -1,0 +1,12 @@
+# PARA HOT-RELOAD E MAPEAMENTO DE MIDIA EM DESENVOLVIMENTO, DESCOMENTAR AS LINHAS ABAIXO.
+
+services:
+  django-cars:
+    volumes:
+      # - ./src:/django_cars/src
+      # - ./data/mediafiles:/django_cars/data/mediafiles
+
+
+  # nginx-cars:
+  #   volumes:
+  #     - ./data/mediafiles:/django_cars/data/mediafiles:ro

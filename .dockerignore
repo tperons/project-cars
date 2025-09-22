@@ -1,0 +1,49 @@
+# Bytecode e cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ambientes virtuais
+env/
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.Python
+
+# Arquivos de ambiente e variáveis
+.env
+.env.*
+
+# Cache e relatórios de testes
+.pytest_cache/
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+
+# Arquivos locais de logs e configs
+*.log
+local_settings.py
+
+# Django e static
+static/
+media/
+*.sqlite3
+*.sqlite3-journal
+
+# VS Code
+.vscode/
+
+# Node.js (se usar npm/yarn para assets)
+node_modules/
+
+# Dockerfile não precisa copiar docs
+README.md
+site/

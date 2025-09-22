@@ -1,0 +1,67 @@
+services:
+
+  django-cars:
+    build: .
+    container_name: django-cars
+    depends_on:
+      - db-cars
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - cars-network
+    volumes:
+      - static_volume:/django_cars/data/staticfiles
+      - media_volume:/django_cars/data/mediafiles
+
+
+  db-cars:
+    container_name: django-cars-db
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    networks:
+      - cars-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  nginx-cars:
+    container_name: django-cars-nginx
+    depends_on:
+      - django-cars
+    image: nginx:1-alpine
+    ports:
+      - "8080:80"
+    networks:
+      - cars-network
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - static_volume:/django_cars/data/staticfiles:ro
+      - media_volume:/django_cars/data/mediafiles:ro
+
+
+  # cloudflared-cars:
+  #     container_name: django-cars-cloudflare
+  #     image: cloudflare/cloudflared:latest
+  #     command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TOKEN}
+  #     depends_on:
+  #       - nginx-cars
+  #     networks:
+  #       - cars-network
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  redis_data:
+
+networks:
+  cars-network:
