@@ -39,8 +39,8 @@
                     {% if site_setup.email %}
                         <p><i class="fas fa-envelope me-3"></i> {{ site_setup.email }}</p>
                     {% endif %}
-                    {% if site_setup.phone %}
-                        <p><i class="fas fa-phone me-3"></i> {{ site_setup.phone|phone_format }}</p>
+                    {% if site_setup.phone_number %}
+                        <p><i class="fas fa-phone me-3"></i> {{ site_setup.phone_number|phone_format }}</p>
                     {% endif %}
                     {% if site_setup.whatsapp_number %}
                         <p><i class="fa-brands fa-whatsapp me-3"></i> {{ site_setup.whatsapp_number|phone_format }}</p>
