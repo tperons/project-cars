@@ -3,7 +3,7 @@
 services:
   django-cars:
     volumes:
-      # - ./src:/django_cars/src
+      - ./src:/django_cars/src
       # - ./data/mediafiles:/django_cars/data/mediafiles
 
 

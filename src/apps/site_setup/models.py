@@ -21,8 +21,8 @@ class Setup(models.Model):
 
     address = models.CharField(verbose_name='Endereço', max_length=256, blank=True)
     email = models.EmailField(verbose_name='Email de Contato', blank=True)
-    phone = models.CharField(verbose_name='Telefone Fixo', max_length=16, blank=True)
-    whatsapp_number = models.CharField(verbose_name='Número do Whatsapp', max_length=32, blank=True, help_text='Ex: 5562912345678 (Código do País + Código de Área + Número)')
+    phone_number = models.CharField(verbose_name='Número de Telefone', max_length=13, blank=True, help_text='Ex: 5562912345678 (Código do País + Código de Área + Número)')
+    whatsapp_number = models.CharField(verbose_name='Número do Whatsapp', max_length=13, blank=True, help_text='Ex: 5562912345678 (Código do País + Código de Área + Número)')
 
     facebook_url = models.URLField(verbose_name='Link do Facebook', blank=True)
     twitter_url = models.URLField(verbose_name='Link do X/Twitter', blank=True)
