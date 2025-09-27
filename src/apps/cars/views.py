@@ -34,11 +34,11 @@ class CarListView(ListView):
             super().get_queryset()
             .select_related('brand')
             .exclude(status=Car.Status.SOLD)
-            )
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context.update({'title': 'Nosso Estoque',})
+        context.update({'title': 'Nosso Estoque', })
         return context
 
 
@@ -52,7 +52,7 @@ class CarDetailView(DetailView):
             super().get_queryset()
             .select_related('brand')
             .prefetch_related('image', 'optionals')
-            )
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -66,7 +66,7 @@ class CarDetailView(DetailView):
             'page_description': car.description,
             'og_image': car.cover,
             'whatsapp_message': whatsapp_message,
-            })
+        })
         return context
 
 
@@ -86,7 +86,7 @@ class CarSearchView(CarListView):
         context.update({
             'title': f'Busca: {self.search_value[:16]}',
             'search_value': self.search_value
-            })
+        })
         return context
 
 
@@ -110,7 +110,7 @@ class CarCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         context.update({
             'title': 'Cadastro de Veículos',
             'car_form': context['form'],
-            })
+        })
         return context
 
 
@@ -130,7 +130,7 @@ class CarUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         context.update({
             'title': f'Editanto {self.object.brand} {self.object.model} {self.object.version}',
             'car_form': context['form'],
-            })
+        })
         return context
 
 

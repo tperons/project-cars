@@ -7,4 +7,4 @@ class SiteSetupConfig(AppConfig):
     verbose_name = 'Site Setup'
 
     def ready(self):
-        from . import signals
+        from . import signals  # noqa: F401

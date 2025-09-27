@@ -11,7 +11,7 @@ def set_admin_titles(sender, **kwargs):
         try:
             setup = Setup.objects.filter(title__gt='').first()
             if setup:
-                admin.site.site_header = f'Área Administrativa'
+                admin.site.site_header = 'Área Administrativa'
                 admin.site.site_title = f'Portal de Administração do {setup.title}'
                 admin.site.index_title = f'Bem vindo à(o) {setup.title}'
         except Exception:

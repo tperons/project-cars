@@ -12,5 +12,5 @@ def generate_ai_description(brand, model, version, year):
         model='gemini-2.5-flash-lite',
         contents=prompt,
         config=types.GenerateContentConfig(thinking_config=types.ThinkingConfig(thinking_budget=0)),
-        )
+    )
     return response.text

@@ -18,7 +18,7 @@ class IndexView(ListView):
         context = super().get_context_data(**kwargs)
         context.update({
             'title': 'Sua Próxima Oportunidade Começa Aqui!',
-            })
+        })
         return context
 
 

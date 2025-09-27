@@ -15,11 +15,11 @@ class SetupAdmin(admin.ModelAdmin):
     def has_favicon(self, object):
         return bool(object.favicon)
     has_favicon.boolean = True
-    
+
     def has_logo(self, object):
         return bool(object.logo)
     has_logo.boolean = True
-    
+
     def has_banner(self, object):
         return bool(object.banner)
     has_banner.boolean = True

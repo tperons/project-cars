@@ -14,7 +14,7 @@ def slugify_filename(filename: str) -> str:
     return slugified_name
 
 
-def generate_upload_path(instance: models.Model, filename: str, base_path: str, name_attribute: str, prefix:str = '') -> str:
+def generate_upload_path(instance: models.Model, filename: str, base_path: str, name_attribute: str, prefix: str = '') -> str:
     extension = os.path.splitext(filename)[1]
     unique_id = uuid.uuid4().hex[:4]
     name_obj = instance
@@ -52,9 +52,6 @@ def photo_upload_path(instance, filename):
     return generate_upload_path(instance, filename, base_path='cars', name_attribute='car.model', prefix='photo-')
 
 
-
-
-
 def resize_and_pad(image_django: File, aspect_width: int, aspect_height: int, target_width: int, background_color: str = 'black', optimize: bool = True, quality: int = 75) -> ContentFile:
     image_content = image_django.read()
     image_pillow = Image.open(BytesIO(image_content))
@@ -89,9 +86,6 @@ def resize_and_pad(image_django: File, aspect_width: int, aspect_height: int, ta
     new_canvas.save(buffer, format='JPEG', optimize=optimize, quality=quality)
 
     return ContentFile(buffer.getvalue(), name=image_django.name)
-
-
-
 
 
 def convert_image(image_django: File, target_format: str = 'WEBP', optimize: bool = True, quality: int = 75) -> ContentFile:

@@ -36,7 +36,7 @@ class CustomLoginView(LoggedOutOnlyMixin, LoginView):
     success_url = reverse_lazy('users:dashboard')
 
     def form_valid(self, form):
-        messages.success(self.request, f'Login realizado com sucesso. Bem-vindo(a) de volta!')
+        messages.success(self.request, 'Login realizado com sucesso. Bem-vindo(a) de volta!')
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -65,10 +65,10 @@ class DashboardView(LoginRequiredMixin, TemplateView):
     def _get_recent_sales_stats(self):
         thirty_days_ago = timezone.now() - timedelta(days=30)
         stats = Car.objects.filter(
-            status=Car.Status.SOLD, 
+            status=Car.Status.SOLD,
             sold_at__gte=thirty_days_ago
         ).aggregate(
-            count=Count('id'), 
+            count=Count('id'),
             total_value=Sum('value')
         )
         return {

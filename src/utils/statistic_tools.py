@@ -1,5 +1,5 @@
 from django.db import transaction
-from django.db.models import Count, Sum
+from django.db.models import Sum
 
 from apps.cars.models import Car, CarInventory
 

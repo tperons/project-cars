@@ -61,7 +61,6 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
-  redis_data:
 
 networks:
   cars-network:

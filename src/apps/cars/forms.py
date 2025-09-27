@@ -11,24 +11,24 @@ class CarModelForm(forms.ModelForm):
     side_view = forms.ImageField(label='Visão lateral', required=False, widget=forms.FileInput(attrs={'class': 'form-control'}))
     back_view = forms.ImageField(label='Visão traseira', required=False, widget=forms.FileInput(attrs={'class': 'form-control'}))
     interior_view = forms.ImageField(label='Visão interior', required=False, widget=forms.FileInput(attrs={'class': 'form-control'}))
-    
+
     class Meta:
         model = Car
         exclude = ['status', 'created_at', 'sold_at']
         widgets = {
-            'brand': forms.Select(attrs={'class': 'form-select',}),
-            'model': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex: Corolla, Civic, Onix...',}),
-            'year': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 2022',}),
-            'version': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex: SE 2.5',}),
-            'value': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 22000',}),
-            'ai_description': forms.CheckboxInput(attrs={'class': 'form-check-input',}),
-            'description': forms.Textarea(attrs={ 'class': 'form-control', 'placeholder': 'Descrição Detalhada do Veículo', 'rows': 4,}),
-            'mileage': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 180000',}),
-            'transmission': forms.Select(attrs={'class': 'form-control',}),
-            'color': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex: Prata',}),
-            'optionals': forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input',}),
-            'cover': forms.FileInput(attrs={'class': 'form-control',}),
-    }
+            'brand': forms.Select(attrs={'class': 'form-select'}),
+            'model': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex: Corolla, Civic, Onix...'}),
+            'year': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 2022'}),
+            'version': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex: SE 2.5'}),
+            'value': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 22000'}),
+            'ai_description': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descrição Detalhada do Veículo', 'rows': 4}),
+            'mileage': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Ex: 180000'}),
+            'transmission': forms.Select(attrs={'class': 'form-control'}),
+            'color': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ex: Prata'}),
+            'optionals': forms.CheckboxSelectMultiple(attrs={'class': 'form-check-input'}),
+            'cover': forms.FileInput(attrs={'class': 'form-control'}),
+        }
 
     def _process_image(self, image_file):
         if image_file:
