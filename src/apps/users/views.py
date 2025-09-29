@@ -9,10 +9,9 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import CreateView, TemplateView
 
-from apps.cars.models import Car, CarInventory
-
-from .forms import CustomAuthenticationForm, CustomUserCreationForm
-from .mixins import LoggedOutOnlyMixin
+from src.apps.cars.models import Car, CarInventory
+from src.apps.users.forms import CustomAuthenticationForm, CustomUserCreationForm
+from src.apps.users.mixins import LoggedOutOnlyMixin
 
 
 class RegisterView(LoggedOutOnlyMixin, SuccessMessageMixin, CreateView):

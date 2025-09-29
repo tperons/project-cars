@@ -17,9 +17,9 @@ from django.views.generic import (
     UpdateView,
 )
 
-from .forms import CarModelForm
-from .mixins import OwnerOrStaffRequiredMixin
-from .models import Brand, Car, Optional
+from src.apps.cars.forms import CarModelForm
+from src.apps.cars.mixins import OwnerOrStaffRequiredMixin
+from src.apps.cars.models import Brand, Car, Optional
 
 
 class CarListView(ListView):

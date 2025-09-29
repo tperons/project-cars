@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db.models.signals import post_migrate
 from django.dispatch import receiver
 
-from .models import Setup
+from src.apps.site_setup.models import Setup
 
 
 @receiver(post_migrate)

@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import get_object_or_404
 
-from .models import Car
+from src.apps.cars.models import Car
 
 
 class OwnerOrStaffRequiredMixin(UserPassesTestMixin):

@@ -1,6 +1,6 @@
 from django.db import models
 
-from utils.image_tools import (
+from src.utils.image_tools import (
     banner_upload_path,
     favicon_upload_path,
     logo_upload_path,

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import (
+from src.apps.cars.views import (
     CarCreateView,
     CarDeleteView,
     CarDetailView,

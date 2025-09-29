@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Brand, Car, CarImages, CarInventory, Optional
+from src.apps.cars.models import Brand, Car, CarImages, CarInventory, Optional
 
 
 class CarImageInline(admin.StackedInline):

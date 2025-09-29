@@ -1,8 +1,7 @@
 from django import forms
 
-from utils.image_tools import convert_image, resize_and_pad
-
-from .models import Setup
+from src.apps.site_setup.models import Setup
+from src.utils.image_tools import convert_image, resize_and_pad
 
 
 class SetupModelForm(forms.ModelForm):

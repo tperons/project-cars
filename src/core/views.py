@@ -1,6 +1,6 @@
 from django.views.generic import ListView, TemplateView
 
-from apps.cars.models import Car
+from src.apps.cars.models import Car
 
 
 class IndexView(ListView):

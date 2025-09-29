@@ -1,7 +1,7 @@
 from django.db import transaction
 from django.db.models import Sum
 
-from apps.cars.models import Car, CarInventory
+from src.apps.cars.models import Car, CarInventory
 
 
 @transaction.atomic

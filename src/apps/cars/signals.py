@@ -1,10 +1,9 @@
 from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 
-from utils.gemini_tools import generate_ai_description
-from utils.statistic_tools import car_inventory_update
-
-from .models import Brand, Car, Optional
+from src.apps.cars.models import Brand, Car, Optional
+from src.utils.gemini_tools import generate_ai_description
+from src.utils.statistic_tools import car_inventory_update
 
 
 @receiver(pre_save, sender=Brand)

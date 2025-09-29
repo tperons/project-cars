@@ -36,9 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'apps.site_setup',
-    'apps.cars',
-    'apps.users',
+    'src.apps.cars',
+    'src.apps.site_setup',
+    'src.apps.users',
 ]
 
 MIDDLEWARE = [

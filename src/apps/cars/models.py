@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from utils.image_tools import cover_upload_path, photo_upload_path
+from src.utils.image_tools import cover_upload_path, photo_upload_path
 
 
 class Brand(models.Model):

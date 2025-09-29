@@ -1,8 +1,7 @@
 from django import forms
 
-from utils.image_tools import convert_image, resize_and_pad
-
-from .models import Car, CarImages
+from src.apps.cars.models import Car, CarImages
+from src.utils.image_tools import convert_image, resize_and_pad
 
 
 class CarModelForm(forms.ModelForm):

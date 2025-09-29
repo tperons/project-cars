@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .forms import SetupModelForm
-from .models import Setup
+from src.apps.site_setup.forms import SetupModelForm
+from src.apps.site_setup.models import Setup
 
 
 @admin.register(Setup)
